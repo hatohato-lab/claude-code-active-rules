@@ -1,0 +1,4 @@
+{
+  "description": "active-rules の hooks モジュール（いま効いているルールのペインと toast）",
+  "modules": ["./register.tsx"]
+}

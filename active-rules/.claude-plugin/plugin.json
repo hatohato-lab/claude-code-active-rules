@@ -1,0 +1,23 @@
+{
+  "name": "active-rules",
+  "version": "0.3.7",
+  "description": "いま文脈に読み込まれているルール（.claude\\rules）を、分類・番号・P・名前・行数・文字数・トークンの表と合計の行でペインに出す。Read・Edit・Write でファイルを触った瞬間に、そのファイルで効く場所限定ルールの名前を toast で知らせる",
+  "author": {
+    "name": "hatohato-lab"
+  },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "rulesDir": {
+      "type": "string",
+      "title": "ルールのフォルダー",
+      "description": "ルールの .md が入っているフォルダーの絶対パス。空ならセッションの作業フォルダーの .claude\\rules",
+      "default": ""
+    },
+    "toasts": {
+      "type": "boolean",
+      "title": "効くルールを toast で知らせる",
+      "description": "Read・Edit・Write でファイルを触ったとき、そのファイルで効く場所限定ルールの名前を toast で出す（同じ組み合わせは10分に1回）",
+      "default": true
+    }
+  }
+}
