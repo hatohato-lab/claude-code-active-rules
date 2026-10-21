@@ -1,0 +1,37 @@
+# Linux で動くかを確かめる。手で起動したときだけ動く（Actions の画面の Run workflow か、gh workflow run linux.yml）
+# 止めるときは、Actions の画面でこの workflow を選び、Disable workflow を押す
+name: Linux で確かめる
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Claude Code を入れる
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: プラグインの形の検査
+        run: claude plugin validate ./active-rules
+
+      - name: テスト
+        working-directory: active-rules
+        run: claude plugin test
+
+      - name: マーケットプレイスから入れる
+        run: |
+          set -euo pipefail
+          claude plugin install active-rules --marketplace "$GITHUB_WORKSPACE"
+          claude plugin list | tee installed.txt
+          grep -q active-rules installed.txt
