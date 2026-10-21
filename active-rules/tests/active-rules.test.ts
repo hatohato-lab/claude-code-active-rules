@@ -81,7 +81,8 @@ function stubWorld(on: On, placed = true): World {
   })
   on('fs.write', () => ({ value: undefined }))
   on('fs.list', ($, e) => {
-    if (e.path.replace(/\\/g, '/').toLowerCase() === RULES_DIR.replace(/\\/g, '/').toLowerCase()) {
+    // Linux では C:\ で始まるパスが相対パスとして扱われ、前に作業フォルダーが付く。どちらでも合うように末尾で比べる
+    if (e.path.replace(/\\/g, '/').toLowerCase().endsWith('/.claude/rules')) {
       return { value: Object.keys(FILES).map(entry) }
     }
     return { value: [] }
