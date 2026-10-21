@@ -78,7 +78,7 @@ claude --plugin-dir claude-code-active-rules/active-rules
 
 - Claude Code 2.1.300 以降が要ります
 - ほかに入れるものはありません。Python などの外のプログラムは動かしません
-- 動作を確かめたのは Windows です
+- 動作を確かめたのは Windows です。Linux は、GitHub Actions（ubuntu-latest）で、テストとマーケットプレイスからの入れ方を確かめています
 
 ## 気を付けること
 
