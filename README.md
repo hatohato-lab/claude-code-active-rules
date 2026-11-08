@@ -95,8 +95,8 @@ MOD は1つずつ、別のリポジトリにしています。
 
 | リポジトリ | 中身 |
 |---|---|
-| [claude-code-session-info](https://github.com/hatohato-lab/claude-code-session-info) | セッション情報。開いている全セッションを1行ずつの表で見るペイン |
-| [claude-code-session-list](https://github.com/hatohato-lab/claude-code-session-list) | セッション一覧。セッション間の連絡を図で見るペイン |
+| [claude-code-session-list](https://github.com/hatohato-lab/claude-code-session-list) | セッションリスト。開いている全セッションを1行ずつの表で見るペイン |
+| [claude-code-session-comm](https://github.com/hatohato-lab/claude-code-session-comm) | セッション間通信。セッション間の連絡を図で見るペイン |
 
 ## ライセンス
 
